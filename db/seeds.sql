@@ -19,7 +19,7 @@ VALUES ('John', 'Doe', 1, NULL),
        ('Mike', 'Chan', 2, 1),
        ('Ashley', 'Rodriguez', 3, NULL),
        ('Brodie', 'Marshall', 4, 3),
-       ('Kumal', 'Singh', 5, NULL),
+       ('Cornel', 'Pauer', 5, NULL),
        ('Malia', 'Brown', 6, 5),
        ('Saul', 'Goodman', 7, NULL),
        ('James', 'Mcgill', 8, 7);
