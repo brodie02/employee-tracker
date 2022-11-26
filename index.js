@@ -1,9 +1,8 @@
-const mysql = require('mysql2')
 const inquirer = require('inquirer')
 
 const {viewDepartments, viewRoles, viewEmployees} = require('./lib/view')
 const {addDepartment, addRole, addEmployee} = require('./lib/create')
-const {updateEmployeeRole} = require('./lib/update')
+const {updateEmployeeRole, updateEmployeeManager} = require('./lib/update')
 
 const start = () => {
     const questions = [
@@ -11,7 +10,7 @@ const start = () => {
             type: 'list',
             message: `What would you like to do?`,
             name: 'choice',
-            choices: ['View All Employees', 'Add Employee', 'Update Employee Role', 'View All Roles', 'Add Role', 'View All Departments', 'Add Department'],
+            choices: ['View All Employees', 'Add Employee', 'Update Employee Role', 'Update Employee Manager', 'View All Roles', 'Add Role', 'View All Departments', 'Add Department'],
         },
     ]
 
@@ -25,6 +24,9 @@ const start = () => {
 
             case 'Update Employee Role':
                 return updateEmployeeRole()
+
+            case 'Update Employee Manager':
+                return updateEmployeeManager()
 
             case 'View All Roles':
                 return viewRoles()
