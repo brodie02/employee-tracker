@@ -5,13 +5,13 @@ const {viewDepartments, viewRoles, viewEmployees} = require('./lib/view')
 const {addDepartment, addRole, addEmployee} = require('./lib/create')
 const {updateEmployeeRole} = require('./lib/update')
 
-const start = async () => {
+const start = () => {
     const questions = [
         {
             type: 'list',
             message: `What would you like to do?`,
             name: 'choice',
-            choices: ['View All Employees', 'Add Employee', 'Update Employee Role', 'View All Roles', 'Add Role', 'View All Departments', 'Add Department']
+            choices: ['View All Employees', 'Add Employee', 'Update Employee Role', 'View All Roles', 'Add Role', 'View All Departments', 'Add Department'],
         },
     ]
 
@@ -33,11 +33,11 @@ const start = async () => {
                 return addRole()
 
             case 'View All Departments':
-                return viewDepartments() 
-                
+                return viewDepartments()
+
             case 'Add Department':
-                return addDepartment()  
-        
+                return addDepartment()
+
             default:
                 return console.log("Something went wrong!");
         }
@@ -46,12 +46,9 @@ const start = async () => {
     inquirer
         .prompt(questions)
         .then((data) => {
-            console.log(check(data.choice));
+            check(data.choice);
         })
 }
 
 start()
 
-module.exports = {
-    start
-}
