@@ -1,6 +1,6 @@
 const inquirer = require('inquirer')
 
-const {viewDepartments, viewRoles, viewEmployees, viewEmployeesByManager, viewManagers} = require('./lib/view')
+const {viewDepartments, viewRoles, viewEmployees, viewEmployeesByManager, viewManagers, viewEmployeesByDepartment} = require('./lib/view')
 const {addDepartment, addRole, addEmployee} = require('./lib/create')
 const {updateEmployeeRole, updateEmployeeManager} = require('./lib/update')
 
@@ -10,7 +10,7 @@ const start = () => {
             type: 'list',
             message: `What would you like to do?`,
             name: 'choice',
-            choices: ['View All Employees', 'View Managers', 'View Employees By Manager ID', 'Add Employee', 'Update Employee Role', 'Update Employee Manager', 'View All Roles', 'Add Role', 'View All Departments', 'Add Department'],
+            choices: ['View All Employees', 'View Managers', 'View Employees By Manager ID', 'View Employees By Department ID', 'Add Employee', 'Update Employee Role', 'Update Employee Manager', 'View All Roles', 'Add Role', 'View All Departments', 'Add Department'],
         },
     ]
 
@@ -24,6 +24,9 @@ const start = () => {
 
             case 'View Employees By Manager ID':
                 return viewEmployeesByManager()
+
+            case 'View Employees By Department ID':
+                return viewEmployeesByDepartment()
 
             case 'Add Employee':
                 return addEmployee()
