@@ -10,7 +10,7 @@ const start = () => {
             type: 'list',
             message: `What would you like to do?`,
             name: 'choice',
-            choices: ['View All Employees', 'View Employees By Manager', 'View Managers', 'Add Employee', 'Update Employee Role', 'Update Employee Manager', 'View All Roles', 'Add Role', 'View All Departments', 'Add Department'],
+            choices: ['View All Employees', 'View Managers', 'View Employees By Manager ID', 'Add Employee', 'Update Employee Role', 'Update Employee Manager', 'View All Roles', 'Add Role', 'View All Departments', 'Add Department'],
         },
     ]
 
@@ -19,11 +19,11 @@ const start = () => {
             case 'View All Employees':
                 return viewEmployees()
 
-            case 'View Employees By Manager':
-                return viewEmployeesByManager()
-
             case 'View Managers':
                 return viewManagers()
+
+            case 'View Employees By Manager ID':
+                return viewEmployeesByManager()
 
             case 'Add Employee':
                 return addEmployee()

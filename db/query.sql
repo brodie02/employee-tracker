@@ -22,5 +22,5 @@ FROM employee as employee_1
 JOIN role ON employee_1.role_id = role.id
 JOIN department ON role.department_id = department.id
 LEFT OUTER JOIN employee ON employee_1.manager_id = employee.id
-WHERE employee_1.manager_id IS NOT NULL
+WHERE employee_1.manager_id = 7
 ORDER BY manager DESC;
