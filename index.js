@@ -18,49 +18,49 @@ const start = () => {
     const check = (answer) => {
         switch (answer) {
             case 'View All Employees':
-                return viewEmployees()
+                return viewEmployees(start)
 
             case 'View Managers':
-                return viewManagers()
+                return viewManagers(start)
 
             case 'View Employees By Manager ID':
-                return viewEmployeesByManager()
+                return viewEmployeesByManager(start)
 
             case 'View Employees By Department ID':
-                return viewEmployeesByDepartment()
+                return viewEmployeesByDepartment(start)
 
             case 'Add Employee':
-                return addEmployee()
+                return addEmployee(start)
 
             case 'Update Employee Role':
-                return updateEmployeeRole()
+                return updateEmployeeRole(start)
 
             case 'Update Employee Manager':
-                return updateEmployeeManager()
+                return updateEmployeeManager(start)
 
             case 'Delete Employee':
-                return deleteEmployee()
+                return deleteEmployee(start)
 
             case 'View All Roles':
-                return viewRoles()
+                return viewRoles(start)
 
             case 'Add Role':
-                return addRole()
+                return addRole(start)
 
             case 'Delete Role':
-                return deleteRole()
+                return deleteRole(start)
 
             case 'View All Departments':
-                return viewDepartments()
+                return viewDepartments(start)
 
             // case 'View Department Salaries':
             //     return viewDepartmentSalaries()
 
             case 'Add Department':
-                return addDepartment()
+                return addDepartment(start)
 
             case 'Delete Department':
-                return deleteDepartment()
+                return deleteDepartment(start)
 
             default:
                 return console.log("Something went wrong!");
@@ -75,4 +75,3 @@ const start = () => {
 }
 
 start()
-
