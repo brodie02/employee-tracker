@@ -1,6 +1,6 @@
 const inquirer = require('inquirer')
 
-const {viewDepartments, viewRoles, viewEmployees, viewEmployeesByManager, viewManagers, viewEmployeesByDepartment, viewDepartmentSalaries} = require('./lib/view')
+const {viewDepartments, viewRoles, viewEmployees, viewEmployeesByManager, viewManagers, viewEmployeesByDepartment} = require('./lib/view')
 const {addDepartment, addRole, addEmployee} = require('./lib/create')
 const {updateEmployeeRole, updateEmployeeManager} = require('./lib/update')
 const {deleteDepartment, deleteRole, deleteEmployee} = require('./lib/delete')
@@ -52,9 +52,6 @@ const start = () => {
 
             case 'View All Departments':
                 return viewDepartments(start)
-
-            // case 'View Department Salaries':
-            //     return viewDepartmentSalaries()
 
             case 'Add Department':
                 return addDepartment(start)
